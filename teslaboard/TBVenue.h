@@ -13,7 +13,7 @@
 
 @import CoreLocation;
 
-@interface TBVenue : NSObject <MKAnnotation>
+@interface TBVenue : NSObject <MKAnnotation, MKOverlay>
 
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 @property (copy, nonatomic, readonly) NSString *name;

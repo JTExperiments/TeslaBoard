@@ -58,6 +58,7 @@
 - (void)setVenues:(NSArray *)venues {
     _venues = [venues copy];
     [self.mapView addAnnotations:_venues];
+    [self.mapView addOverlays:_venues];
 }
 
 #pragma mark MKMapViewDelegate
@@ -75,6 +76,17 @@
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
     self.userLocation = userLocation;
     [self moveToUserLocation:nil];
+}
+
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {
+
+    MKCircleRenderer *renderrer = [[MKCircleRenderer alloc] initWithCircle:overlay];
+    renderrer.fillColor = [UIColor colorWithRed:(CGFloat)0x34/0xff
+                                          green:(CGFloat)0xa3/0xff
+                                           blue:(CGFloat)0xdb/0xff
+                                          alpha:0.2];
+
+    return renderrer;
 }
 
 @end
