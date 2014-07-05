@@ -14,6 +14,7 @@
 
 @property (copy, nonatomic) NSString *name;
 @property (copy, nonatomic) UIColor *color;
+@property (copy, nonatomic) NSURL *logoURL;
 
 @end
 
@@ -23,6 +24,10 @@
     TBClub *club = [[TBClub alloc] init];
     club.name = [obj objectForKey:@"name"];
     club.color = [UIColor colorWithHexString:[obj objectForKey:@"color"]];
+
+    AVFile *logo = [obj objectForKey:@"logo"];
+    club.logoURL = [NSURL URLWithString:logo.url];
+
     return club;
 }
 

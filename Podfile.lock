@@ -1,13 +1,18 @@
 PODS:
   - AVOSCloud (2.5.9.1)
+  - SDWebImage (3.6):
+    - SDWebImage/Core
+  - SDWebImage/Core (3.6)
   - UIColor-HexString (1.1.0)
 
 DEPENDENCIES:
   - AVOSCloud
+  - SDWebImage (~> 3.6)
   - UIColor-HexString (~> 1.1.0)
 
 SPEC CHECKSUMS:
   AVOSCloud: 5a7e670424c49eba6540f3bf23493d15485dc8d9
+  SDWebImage: c6989652c1cdf27cbdf3f56957e2030f825af5bc
   UIColor-HexString: a9eabf02c1a2f9036ed6ac9cb2a3ea086f3b39e4
 
 COCOAPODS: 0.33.1

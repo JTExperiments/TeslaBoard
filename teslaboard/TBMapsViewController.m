@@ -11,6 +11,7 @@
 #import "TBGetVenuesRequest.h"
 #import "TBVenue.h"
 #import "TBClub.h"
+#import "UIImageView+WebCache.h"
 
 @import MapKit;
 
@@ -77,6 +78,35 @@
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
     self.userLocation = userLocation;
     [self moveToUserLocation:nil];
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+
+    if ([annotation class] == [MKUserLocation class]) {
+        return nil;
+    }
+
+    static NSString *identifier = @"annotation";
+
+    TBVenue *venue = (id)annotation;
+    TBClub *club = venue.club;
+
+    MKAnnotationView *view = [mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+
+    UIImageView *imageView = (id)[view viewWithTag:1];
+    if ( ! view) {
+        view = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+        imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 38, 38)];
+        imageView.image = [UIImage imageNamed:@"club-placeholder"];
+        imageView.tag = 1;
+        view.leftCalloutAccessoryView = imageView;
+        view.canShowCallout = YES;
+    }
+
+    view.annotation = annotation;
+    [imageView setImageWithURL:club.logoURL];
+
+    return view;
 }
 
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {
