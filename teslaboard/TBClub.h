@@ -14,6 +14,7 @@
 @property (copy, nonatomic, readonly) NSString *name;
 @property (copy, nonatomic, readonly) UIColor *color;
 @property (copy, nonatomic, readonly) NSURL *logoURL;
+@property (copy, nonatomic, readonly) UIImage *logo;
 
 + (TBClub *)clubWithAVObject:(AVObject *)obj;
 

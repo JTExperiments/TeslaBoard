@@ -93,18 +93,19 @@
 
     MKAnnotationView *view = [mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
 
-    UIImageView *imageView = (id)[view viewWithTag:1];
+    UIImageView *calloutImageView = (id)[view viewWithTag:1];
     if ( ! view) {
-        view = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
-        imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 38, 38)];
-        imageView.image = [UIImage imageNamed:@"club-placeholder"];
-        imageView.tag = 1;
-        view.leftCalloutAccessoryView = imageView;
+        view = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+        calloutImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 38, 38)];
+        calloutImageView.image = [UIImage imageNamed:@"club-placeholder"];
+        calloutImageView.tag = 1;
+        view.leftCalloutAccessoryView = calloutImageView;
         view.canShowCallout = YES;
     }
 
     view.annotation = annotation;
-    [imageView setImageWithURL:club.logoURL];
+    view.image = club.logo;
+    [calloutImageView setImageWithURL:club.logoURL];
 
     return view;
 }

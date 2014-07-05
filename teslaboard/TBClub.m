@@ -9,12 +9,14 @@
 #import "TBClub.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import "UIColor+HexString.h"
+#import "SDWebImageManager.h"
 
 @interface TBClub ()
 
 @property (copy, nonatomic) NSString *name;
 @property (copy, nonatomic) UIColor *color;
 @property (copy, nonatomic) NSURL *logoURL;
+@property (copy, nonatomic) UIImage *logo;
 
 @end
 
@@ -27,6 +29,24 @@
 
     AVFile *logo = [obj objectForKey:@"logo"];
     club.logoURL = [NSURL URLWithString:logo.url];
+
+    SDWebImageManager *manager = [SDWebImageManager sharedManager];
+    [manager downloadWithURL:club.logoURL
+                     options:0
+                    progress:^(NSInteger receivedSize, NSInteger expectedSize)
+     {
+         // progression tracking code
+     }
+                   completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished)
+     {
+         if (image)
+         {
+             // do something with image
+             club.logo = [UIImage imageWithCGImage:image.CGImage
+                                             scale:2
+                                       orientation:UIImageOrientationUp];
+         }
+     }];
 
     return club;
 }
