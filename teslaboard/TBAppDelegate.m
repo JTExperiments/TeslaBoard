@@ -8,6 +8,7 @@
 
 #import "TBAppDelegate.h"
 #import "TBBeansManager.h"
+#import <AVOSCloud/AVOSCloud.h>
 
 @implementation TBAppDelegate
 
@@ -16,6 +17,10 @@
     // Override point for customization after application launch.
 
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
+    [AVOSCloud setApplicationId:@"butg5291xt367nbbnocrvu2ioz9bqntnntr5ahml5d5lilig"
+                      clientKey:@"5ybrlvladtlmlk6h0y6j385qfj718qdrqv347h6lqal3u671"];
+
     return YES;
 }
 							

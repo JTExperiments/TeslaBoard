@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="QaZ-s2-4cd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="nF0-QL-GTb">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -15,7 +15,20 @@
                     <view key="view" contentMode="scaleToFill" id="pWT-lK-acc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IUD-be-hR1">
+                                <rect key="frame" x="269" y="20" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="map">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="QaZ-s2-4cd" kind="modal" id="9rw-Ol-bU2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.87058823529411766" green="0.43529411764705883" blue="0.14509803921568629" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="3D0-HC-78e">
                         <barButtonItem key="rightBarButtonItem" title="Connect" id="1KR-ck-1UW">
@@ -35,7 +48,7 @@
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="320" y="714"/>
+            <point key="canvasLocation" x="1041" y="987"/>
         </scene>
         <!--Maps View Controller - 地圖-->
         <scene sceneID="cCi-8s-sA7">
@@ -59,7 +72,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="地圖" id="7eb-ch-QvQ"/>
+                    <navigationItem key="navigationItem" title="地圖" id="7eb-ch-QvQ">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="K1R-LE-kkJ">
+                            <connections>
+                                <action selector="addButtonDidPress:" destination="PDG-dU-csH" id="bds-mL-BBj"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="map" id="Boc-55-FDr">
+                            <connections>
+                                <action selector="listButtonDidPress:" destination="PDG-dU-csH" id="add-Fh-Acx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="Tfp-mc-XzJ" id="s3I-tP-MEX"/>
                     </connections>
@@ -117,7 +141,7 @@
         <!--Navigation Controller-->
         <scene sceneID="7FS-Ee-w3g">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nF0-QL-GTb" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="nF0-QL-GTb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bx5-cC-Ksg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -130,7 +154,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bA7-uF-YAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-65" y="714"/>
+            <point key="canvasLocation" x="656" y="987"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BJF-ac-hZh">
@@ -140,6 +164,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="AN4-6X-zhp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.94983106851577759" green="0.28467085957527161" blue="0.2397511899471283" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -155,6 +180,9 @@
             <point key="canvasLocation" x="1631" y="1406"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="map" width="23" height="24"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

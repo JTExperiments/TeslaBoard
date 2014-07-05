@@ -10,6 +10,9 @@
 		1A048533196812AE00BC7D29 /* ShangHai.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 1A048532196812AE00BC7D29 /* ShangHai.gpx */; };
 		1A0485351968135700BC7D29 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0485341968135700BC7D29 /* MapKit.framework */; };
 		1A048538196814A800BC7D29 /* TBMapsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A048537196814A800BC7D29 /* TBMapsViewController.m */; };
+		1A04853E19681E0200BC7D29 /* TBAddVenueRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A04853D19681E0200BC7D29 /* TBAddVenueRequest.m */; };
+		1A04854119681F2300BC7D29 /* TBVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A04854019681F2300BC7D29 /* TBVenue.m */; };
+		1A048544196822FA00BC7D29 /* TBGetVenuesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A048543196822FA00BC7D29 /* TBGetVenuesRequest.m */; };
 		1AAE96CC1967D5EC002B8163 /* libBean iOS Library.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAE96CB1967D5EC002B8163 /* libBean iOS Library.a */; };
 		1ADCA64A1967ED560066DB7B /* TBWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ADCA6491967ED560066DB7B /* TBWelcomeViewController.m */; };
 		1ADCA64D1967ED760066DB7B /* TBSelectBeanIntention.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ADCA64C1967ED760066DB7B /* TBSelectBeanIntention.m */; };
@@ -47,6 +50,12 @@
 		1A0485341968135700BC7D29 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1A048536196814A800BC7D29 /* TBMapsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBMapsViewController.h; sourceTree = "<group>"; };
 		1A048537196814A800BC7D29 /* TBMapsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBMapsViewController.m; sourceTree = "<group>"; };
+		1A04853C19681E0200BC7D29 /* TBAddVenueRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAddVenueRequest.h; sourceTree = "<group>"; };
+		1A04853D19681E0200BC7D29 /* TBAddVenueRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAddVenueRequest.m; sourceTree = "<group>"; };
+		1A04853F19681F2300BC7D29 /* TBVenue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBVenue.h; sourceTree = "<group>"; };
+		1A04854019681F2300BC7D29 /* TBVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBVenue.m; sourceTree = "<group>"; };
+		1A048542196822FA00BC7D29 /* TBGetVenuesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBGetVenuesRequest.h; sourceTree = "<group>"; };
+		1A048543196822FA00BC7D29 /* TBGetVenuesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBGetVenuesRequest.m; sourceTree = "<group>"; };
 		1AAE96CB1967D5EC002B8163 /* libBean iOS Library.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libBean iOS Library.a"; sourceTree = "<group>"; };
 		1AAE96CD1967D617002B8163 /* BEAN_Globals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BEAN_Globals.h; sourceTree = "<group>"; };
 		1AAE96CE1967D617002B8163 /* PTDBean.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTDBean.h; sourceTree = "<group>"; };
@@ -137,6 +146,8 @@
 				1ADCA6531967EEC00066DB7B /* TBBeansDataSource.m */,
 				1ADCA6551967F35C0066DB7B /* TBBeansManager.h */,
 				1ADCA6561967F35C0066DB7B /* TBBeansManager.m */,
+				1A04853F19681F2300BC7D29 /* TBVenue.h */,
+				1A04854019681F2300BC7D29 /* TBVenue.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -238,6 +249,10 @@
 		1ADE1C761967CF6900786DA1 /* Singleton */ = {
 			isa = PBXGroup;
 			children = (
+				1A04853C19681E0200BC7D29 /* TBAddVenueRequest.h */,
+				1A04853D19681E0200BC7D29 /* TBAddVenueRequest.m */,
+				1A048542196822FA00BC7D29 /* TBGetVenuesRequest.h */,
+				1A048543196822FA00BC7D29 /* TBGetVenuesRequest.m */,
 			);
 			name = Singleton;
 			sourceTree = "<group>";
@@ -377,12 +392,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				1ADCA6541967EEC00066DB7B /* TBBeansDataSource.m in Sources */,
+				1A04853E19681E0200BC7D29 /* TBAddVenueRequest.m in Sources */,
 				1ADE1C4E1967BAA800786DA1 /* TBAppDelegate.m in Sources */,
 				1ADCA64A1967ED560066DB7B /* TBWelcomeViewController.m in Sources */,
 				1ADCA64D1967ED760066DB7B /* TBSelectBeanIntention.m in Sources */,
+				1A04854119681F2300BC7D29 /* TBVenue.m in Sources */,
 				1ADCA6511967EE9B0066DB7B /* TBBeansBrowserViewController.m in Sources */,
 				1ADCA6571967F35C0066DB7B /* TBBeansManager.m in Sources */,
 				1ADE1C4A1967BAA800786DA1 /* main.m in Sources */,
+				1A048544196822FA00BC7D29 /* TBGetVenuesRequest.m in Sources */,
 				1A048538196814A800BC7D29 /* TBMapsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
