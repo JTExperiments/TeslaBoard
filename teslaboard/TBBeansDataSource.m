@@ -7,16 +7,14 @@
 //
 
 #import "TBBeansDataSource.h"
-#import "PTDBeanManager.h"
 #import "PTDBean.h"
+#import "TBBeansManager.h"
 
 @interface TBBeansDataSource () <
-PTDBeanManagerDelegate
-, UITableViewDataSource
+UITableViewDataSource
 , UITableViewDelegate
 >
 
-@property (strong, nonatomic) PTDBeanManager *beansManager;
 @property (strong, nonatomic) NSMutableArray *beans;
 @property (strong, nonatomic) PTDBean *bean;
 
@@ -31,33 +29,31 @@ PTDBeanManagerDelegate
     [self commonInit];
 }
 
-- (void)commonInit {
-    self.beansManager = [[PTDBeanManager alloc] initWithDelegate:self];
-    self.beans = [[NSMutableArray alloc] init];
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
+
+- (void)commonInit {
+    self.beans = [[TBBeansManager sharedInstance].currentBeans copy];
+    self.bean = [TBBeansManager sharedInstance].bean;
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(beansDidUpdateNotification:) name:TBBeansManagerBeansDidUpdateNotification
+                                               object:nil];
+}
+
+#pragma mark Overrides
 
 - (void)setTableView:(UITableView *)tableView {
     _tableView = tableView;
     [_tableView reloadData];
-
-    [self startScanning];
 }
 
-- (void)startScanning {
-    if ( ! self.bean) {
-        NSError *error;
-        [self.beansManager startScanningForBeans_error:&error];
-    }
-}
 
-- (void)addBean:(PTDBean *)bean {
+#pragma mark Notifications
 
-    [self.tableView beginUpdates];
-    [self.beans addObject:bean];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self.beans count] - 1 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath]
-                          withRowAnimation:UITableViewRowAnimationAutomatic];
-    [self.tableView endUpdates];
+- (void)beansDidUpdateNotification:(NSNotification *)notification {
+    self.beans = [[[TBBeansManager sharedInstance] currentBeans] copy];
+    [self.tableView reloadData];
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
@@ -95,14 +91,10 @@ PTDBeanManagerDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"touched row %lu",(long)indexPath.row);
     // connect bean
-    [self.beansManager stopScanningForBeans_error:nil];
-
     PTDBean *bean = self.beans[indexPath.row];
 
     if (self.bean) {
-        NSError *error;
-        [self.beansManager disconnectBean:bean
-                                    error:&error];
+        [[TBBeansManager sharedInstance] disconnectCurrentBean];
 
         if (self.bean && self.bean == bean) {
             self.bean = nil;
@@ -114,10 +106,7 @@ PTDBeanManagerDelegate
     }
 
     if (self.bean) {
-        [self.delegate beansDataSource:self
-                         didSelectBean:self.bean];
-
-        [self.beansManager connectToBean:self.bean error:nil];
+        [[TBBeansManager sharedInstance] connectBean:bean];
     }
 
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
@@ -125,47 +114,6 @@ PTDBeanManagerDelegate
 
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 
-}
-
-#pragma mark PTDBeanManagerDelegate
-
-// check to make sure we're on
-- (void)beanManagerDidUpdateState:(PTDBeanManager *)manager {
-    if (manager.state == CBCentralManagerStatePoweredOn) {
-        [self startScanning];
-    }
-}
-
-// bean discovered
-- (void)BeanManager:(PTDBeanManager*)beanManager didDiscoverBean:(PTDBean*)aBean error:(NSError*)error{
-    if (error) {
-        PTDLog(@"%@", [error localizedDescription]);
-        return;
-    }
-    if( ![self.beans containsObject:aBean] ){
-        [self addBean:aBean];
-    }
-    //    [flipsideController.scanTable reloadData];
-    NSLog(@"Updated Bean in Scan Window: %@",[((PTDBean *)self.beans[0]) name]);
-    //[self.beanManager connectToBean:bean error:nil];
-}
-// bean connected
-- (void)BeanManager:(PTDBeanManager*)beanManager didConnectToBean:(PTDBean*)bean error:(NSError*)error{
-    if (error) {
-        PTDLog(@"%@", [error localizedDescription]);
-        return;
-    }
-    // do stuff with your bean
-    NSLog(@"Bean connected!");
-    [self.delegate beansDataSource:self
-                     didSelectBean:bean];
-    //[connectionProgress stopAnimation:self];
-    //[connectedLabel setStringValue:connectedCheck];
-}
-
-- (void)BeanManager:(PTDBeanManager*)beanManager didDisconnectBean:(PTDBean*)bean error:(NSError*)error {
-    NSLog(@"Bean disconnected.");
-    //[connectedLabel setStringValue:disconnectedX];
 }
 
 @end

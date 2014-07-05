@@ -43,7 +43,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <customObject id="6QX-t4-Cbn" customClass="TBBeansDataSource">
                     <connections>
-                        <outlet property="delegate" destination="vXZ-lx-hvc" id="5al-OU-4Nw"/>
                         <outlet property="tableView" destination="4HF-3N-Zgk" id="4T2-yx-imf"/>
                     </connections>
                 </customObject>

@@ -7,9 +7,9 @@
 //
 
 #import "TBBeansBrowserViewController.h"
-#import "TBBeansDataSource.h"
+#import "TBBeansManager.h"
 
-@interface TBBeansBrowserViewController () <TBBeansDataSourceDelegate>
+@interface TBBeansBrowserViewController ()
 
 @end
 
@@ -21,11 +21,16 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
-#pragma mark Action
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
 
-- (void)beansDataSource:(TBBeansDataSource *)dataSource didSelectBean:(PTDBean *)bean {
+    [[TBBeansManager sharedInstance] startScanning];
+}
 
-    NSLog(@"bean %@", bean);
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+
+    [[TBBeansManager sharedInstance] stopScanning];
 }
 
 @end

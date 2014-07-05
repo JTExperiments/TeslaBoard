@@ -12,16 +12,9 @@
 @class PTDBean;
 @class TBBeansDataSource;
 
-@protocol TBBeansDataSourceDelegate <NSObject>
-
-- (void)beansDataSource:(TBBeansDataSource *)dataSource
-          didSelectBean:(PTDBean *)bean;
-
-@end
 
 @interface TBBeansDataSource : NSObject
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet id <TBBeansDataSourceDelegate> delegate;
 
 @end
