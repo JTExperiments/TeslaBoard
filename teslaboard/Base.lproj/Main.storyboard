@@ -28,7 +28,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptb-KO-iAp">
-                                <rect key="frame" x="20" y="140" width="83" height="30"/>
+                                <rect key="frame" x="130" y="139" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="setScratch1">
@@ -50,12 +50,19 @@
                                     <action selector="sendButtonDidPress:" destination="k3o-q4-rQq" eventType="touchUpInside" id="icO-n8-OnC"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="data" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xIb-jf-0u0">
+                                <rect key="frame" x="20" y="139" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.87058823529411766" green="0.43529411764705883" blue="0.14509803921568629" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="3D0-HC-78e"/>
                     <connections>
+                        <outlet property="scratchTextField" destination="xIb-jf-0u0" id="avc-Cn-Mpd"/>
                         <outlet property="selectBeanIntention" destination="KuN-LH-b8t" id="xlZ-gz-EEf"/>
                     </connections>
                 </viewController>

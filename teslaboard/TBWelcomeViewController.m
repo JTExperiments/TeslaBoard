@@ -13,6 +13,7 @@
 
 @interface TBWelcomeViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *scratchTextField;
 @property (strong, nonatomic) IBOutlet TBSelectBeanIntention *selectBeanIntention;
 
 @end
@@ -32,10 +33,14 @@
     // set the scratch data
     PTDBean *bean = [TBBeansManager sharedInstance].bean;
 
-    [bean setScratchNumber:scratchNumber withValue:[@"scratchdata" dataUsingEncoding:NSUTF8StringEncoding]];
+    NSString *value = self.scratchTextField.text;
+
+    [bean setScratchNumber:scratchNumber withValue:[value dataUsingEncoding:NSUTF8StringEncoding]];
+
     // after some time, ask for it back
     [bean readScratchBank:scratchNumber];
 
+    NSLog(@"sent %@ to scratch1", value);
 }
 
 @end
