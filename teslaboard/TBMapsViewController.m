@@ -7,14 +7,15 @@
 //
 
 #import "TBMapsViewController.h"
-#import "TBAddVenueRequest.h"
+#import "TBAddVenueIntention.h"
+
 @import MapKit;
 
 @interface TBMapsViewController () <MKMapViewDelegate>
 
 @property (strong, nonatomic) MKUserLocation *userLocation;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-@property (strong, nonatomic) TBAddVenueRequest *addVenueRequest;
+@property (strong, nonatomic) TBAddVenueIntention *addVenueIntention;
 
 @end
 
@@ -35,13 +36,9 @@
 
     NSLog(@"coordinate %f %f", coordinate.latitude, coordinate.longitude);
 
-    self.addVenueRequest = [[TBAddVenueRequest alloc] init];
-    self.addVenueRequest.name = @"Test";
-    self.addVenueRequest.coordinate = coordinate;
-    self.addVenueRequest.completionBlock = ^(TBVenue *venue, NSError *error) {
-        NSLog(@"%@", venue);
-    };
-    [self.addVenueRequest perform];
+    self.addVenueIntention = [[TBAddVenueIntention alloc] init];
+    self.addVenueIntention.coordinate = coordinate;
+    [self.addVenueIntention perform];
 }
 
 #pragma mark MKMapViewDelegate
