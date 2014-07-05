@@ -43,4 +43,21 @@
     NSLog(@"sent %@ to scratch1", value);
 }
 
+- (IBAction)startButtonDidPress:(id)sender {
+
+    // set the scratch data
+    PTDBean *bean = [TBBeansManager sharedInstance].bean;
+
+    [bean sendSerialString:@"1"];
+
+}
+
+- (IBAction)stopButtonDidPress:(id)sender {
+    // set the scratch data
+    PTDBean *bean = [TBBeansManager sharedInstance].bean;
+
+    [bean sendSerialString:@"1\n"];
+
+}
+
 @end
