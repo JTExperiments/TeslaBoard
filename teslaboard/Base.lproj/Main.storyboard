@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="nF0-QL-GTb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="QaZ-s2-4cd">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -7,7 +7,6 @@
         <!--Welcome View Controller-->
         <scene sceneID="l1T-Bd-TmD">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xJA-WB-0qI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="k3o-q4-rQq" customClass="TBWelcomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YJw-g2-xcm"/>
@@ -29,6 +28,7 @@
                         <outlet property="selectBeanIntention" destination="KuN-LH-b8t" id="xlZ-gz-EEf"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xJA-WB-0qI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="KuN-LH-b8t" customClass="TBSelectBeanIntention">
                     <connections>
                         <outlet property="viewController" destination="k3o-q4-rQq" id="O9n-Nh-Gx0"/>
@@ -37,15 +37,40 @@
             </objects>
             <point key="canvasLocation" x="320" y="714"/>
         </scene>
+        <!--Maps View Controller - 地圖-->
+        <scene sceneID="cCi-8s-sA7">
+            <objects>
+                <viewController id="PDG-dU-csH" customClass="TBMapsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4TU-aw-fPd"/>
+                        <viewControllerLayoutGuide type="bottom" id="IXm-xJ-txq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8ry-81-pHq">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tfp-mc-XzJ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="PDG-dU-csH" id="qhb-mg-EJk"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="地圖" id="7eb-ch-QvQ"/>
+                    <connections>
+                        <outlet property="mapView" destination="Tfp-mc-XzJ" id="s3I-tP-MEX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yJV-0U-je6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2030" y="1406"/>
+        </scene>
         <!--Beans Browser View Controller - Beans-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-                <customObject id="6QX-t4-Cbn" customClass="TBBeansDataSource">
-                    <connections>
-                        <outlet property="tableView" destination="4HF-3N-Zgk" id="4T2-yx-imf"/>
-                    </connections>
-                </customObject>
                 <viewController storyboardIdentifier="beansBrowserViewController" id="vXZ-lx-hvc" customClass="TBBeansBrowserViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
@@ -80,13 +105,18 @@
                     <navigationItem key="navigationItem" title="Beans" id="F8C-fV-sG8"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <customObject id="6QX-t4-Cbn" customClass="TBBeansDataSource">
+                    <connections>
+                        <outlet property="tableView" destination="4HF-3N-Zgk" id="4T2-yx-imf"/>
+                    </connections>
+                </customObject>
             </objects>
-            <point key="canvasLocation" x="1112" y="714"/>
+            <point key="canvasLocation" x="1638" y="714"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7FS-Ee-w3g">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bA7-uF-YAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nF0-QL-GTb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bx5-cC-Ksg">
@@ -98,8 +128,31 @@
                         <segue destination="k3o-q4-rQq" kind="relationship" relationship="rootViewController" id="BLX-m5-qit"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bA7-uF-YAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-65" y="714"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BJF-ac-hZh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QaZ-s2-4cd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="AN4-6X-zhp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.94983106851577759" green="0.28467085957527161" blue="0.2397511899471283" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PDG-dU-csH" kind="relationship" relationship="rootViewController" id="K5j-j8-gY0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xjk-ai-M4P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1631" y="1406"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

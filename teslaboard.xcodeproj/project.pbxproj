@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A048533196812AE00BC7D29 /* ShangHai.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 1A048532196812AE00BC7D29 /* ShangHai.gpx */; };
+		1A0485351968135700BC7D29 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0485341968135700BC7D29 /* MapKit.framework */; };
+		1A048538196814A800BC7D29 /* TBMapsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A048537196814A800BC7D29 /* TBMapsViewController.m */; };
 		1AAE96CC1967D5EC002B8163 /* libBean iOS Library.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAE96CB1967D5EC002B8163 /* libBean iOS Library.a */; };
 		1ADCA64A1967ED560066DB7B /* TBWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ADCA6491967ED560066DB7B /* TBWelcomeViewController.m */; };
 		1ADCA64D1967ED760066DB7B /* TBSelectBeanIntention.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ADCA64C1967ED760066DB7B /* TBSelectBeanIntention.m */; };
@@ -40,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A048532196812AE00BC7D29 /* ShangHai.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ShangHai.gpx; sourceTree = "<group>"; };
+		1A0485341968135700BC7D29 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		1A048536196814A800BC7D29 /* TBMapsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBMapsViewController.h; sourceTree = "<group>"; };
+		1A048537196814A800BC7D29 /* TBMapsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBMapsViewController.m; sourceTree = "<group>"; };
 		1AAE96CB1967D5EC002B8163 /* libBean iOS Library.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libBean iOS Library.a"; sourceTree = "<group>"; };
 		1AAE96CD1967D617002B8163 /* BEAN_Globals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BEAN_Globals.h; sourceTree = "<group>"; };
 		1AAE96CE1967D617002B8163 /* PTDBean.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTDBean.h; sourceTree = "<group>"; };
@@ -81,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A0485351968135700BC7D29 /* MapKit.framework in Frameworks */,
 				1ADE1C401967BAA800786DA1 /* CoreGraphics.framework in Frameworks */,
 				1ADE1C421967BAA800786DA1 /* UIKit.framework in Frameworks */,
 				1ADE1C3E1967BAA800786DA1 /* Foundation.framework in Frameworks */,
@@ -156,6 +164,7 @@
 		1ADE1C3C1967BAA800786DA1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A0485341968135700BC7D29 /* MapKit.framework */,
 				1AAE96CB1967D5EC002B8163 /* libBean iOS Library.a */,
 				1ADE1C3D1967BAA800786DA1 /* Foundation.framework */,
 				1ADE1C3F1967BAA800786DA1 /* CoreGraphics.framework */,
@@ -171,6 +180,7 @@
 			children = (
 				1ADE1C4C1967BAA800786DA1 /* TBAppDelegate.h */,
 				1ADE1C4D1967BAA800786DA1 /* TBAppDelegate.m */,
+				1A048532196812AE00BC7D29 /* ShangHai.gpx */,
 				1ADE1C4F1967BAA800786DA1 /* Main.storyboard */,
 				1ADCA65819680BA70066DB7B /* Model */,
 				1ADCA64E1967ED780066DB7B /* Intention */,
@@ -219,6 +229,8 @@
 				1ADCA6491967ED560066DB7B /* TBWelcomeViewController.m */,
 				1ADCA64F1967EE9B0066DB7B /* TBBeansBrowserViewController.h */,
 				1ADCA6501967EE9B0066DB7B /* TBBeansBrowserViewController.m */,
+				1A048536196814A800BC7D29 /* TBMapsViewController.h */,
+				1A048537196814A800BC7D29 /* TBMapsViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -309,6 +321,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A048533196812AE00BC7D29 /* ShangHai.gpx in Resources */,
 				1ADE1C561967BAA800786DA1 /* Images.xcassets in Resources */,
 				1ADE1C481967BAA800786DA1 /* InfoPlist.strings in Resources */,
 				1ADE1C511967BAA800786DA1 /* Main.storyboard in Resources */,
@@ -370,6 +383,7 @@
 				1ADCA6511967EE9B0066DB7B /* TBBeansBrowserViewController.m in Sources */,
 				1ADCA6571967F35C0066DB7B /* TBBeansManager.m in Sources */,
 				1ADE1C4A1967BAA800786DA1 /* main.m in Sources */,
+				1A048538196814A800BC7D29 /* TBMapsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
