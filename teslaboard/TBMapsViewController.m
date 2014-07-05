@@ -8,6 +8,8 @@
 
 #import "TBMapsViewController.h"
 #import "TBAddVenueIntention.h"
+#import "TBGetVenuesRequest.h"
+#import "TBVenue.h"
 
 @import MapKit;
 
@@ -16,6 +18,8 @@
 @property (strong, nonatomic) MKUserLocation *userLocation;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) TBAddVenueIntention *addVenueIntention;
+@property (strong, nonatomic) TBGetVenuesRequest *getVenuesRequet;
+@property (copy, nonatomic) NSArray *venues;  // TBVenue
 
 @end
 
@@ -24,6 +28,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    __weak typeof(self)weakSelf = self;
+    self.getVenuesRequet = [[TBGetVenuesRequest alloc] init];
+    self.getVenuesRequet.completion = ^(NSArray *venues, NSError *error) {
+        weakSelf.venues = venues;
+        NSLog(@"venues %@", venues);
+    };
+    [self.getVenuesRequet perform];
 }
 
 - (IBAction)listButtonDidPress:(id)sender {
@@ -39,6 +51,13 @@
     self.addVenueIntention = [[TBAddVenueIntention alloc] init];
     self.addVenueIntention.coordinate = coordinate;
     [self.addVenueIntention perform];
+}
+
+#pragma mark Overrides
+
+- (void)setVenues:(NSArray *)venues {
+    _venues = [venues copy];
+    [self.mapView addAnnotations:_venues];
 }
 
 #pragma mark MKMapViewDelegate

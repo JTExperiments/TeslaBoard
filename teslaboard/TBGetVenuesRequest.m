@@ -7,7 +7,32 @@
 //
 
 #import "TBGetVenuesRequest.h"
+#import <AVOSCloud/AVOSCloud.h>
+#import "TBVenue.h"
 
 @implementation TBGetVenuesRequest
+
+- (void)perform {
+    __weak typeof(self)weakSelf = self;
+
+    AVQuery * query = [AVQuery queryWithClassName:@"Venue"];
+    query.limit = 100;
+
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+
+        NSMutableArray *venues = [[NSMutableArray alloc] init];
+
+        [objects enumerateObjectsUsingBlock:^(AVObject *obj, NSUInteger idx, BOOL *stop) {
+
+            TBVenue *venue = [TBVenue venueWithAVObject:obj];
+            [venues addObject:venue];
+        }];
+
+        if (weakSelf.completion) {
+            weakSelf.completion(venues, error);
+        }
+    }];
+
+}
 
 @end

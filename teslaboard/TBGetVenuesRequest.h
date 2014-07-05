@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@import CoreLocation;
+
+typedef void(^TBGetVenuesCompletionHandler)(NSArray *venues, NSError *error); // TBVenue
+
 @interface TBGetVenuesRequest : NSObject
+
+@property (copy, nonatomic) TBGetVenuesCompletionHandler completion;
+
+- (void)perform;
 
 @end

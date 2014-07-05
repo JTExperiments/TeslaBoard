@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@import MapKit;
 @class AVObject;
 
 @import CoreLocation;
 
-@interface TBVenue : NSObject
+@interface TBVenue : NSObject <MKAnnotation>
 
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 @property (copy, nonatomic, readonly) NSString *name;
