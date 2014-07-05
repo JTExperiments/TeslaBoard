@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1AAE96CC1967D5EC002B8163 /* libBean iOS Library.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAE96CB1967D5EC002B8163 /* libBean iOS Library.a */; };
+		1ADCA64A1967ED560066DB7B /* TBWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ADCA6491967ED560066DB7B /* TBWelcomeViewController.m */; };
+		1ADCA64D1967ED760066DB7B /* TBSelectBeanIntention.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ADCA64C1967ED760066DB7B /* TBSelectBeanIntention.m */; };
+		1ADCA6511967EE9B0066DB7B /* TBBeansBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ADCA6501967EE9B0066DB7B /* TBBeansBrowserViewController.m */; };
 		1ADE1C3E1967BAA800786DA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ADE1C3D1967BAA800786DA1 /* Foundation.framework */; };
 		1ADE1C401967BAA800786DA1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ADE1C3F1967BAA800786DA1 /* CoreGraphics.framework */; };
 		1ADE1C421967BAA800786DA1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ADE1C411967BAA800786DA1 /* UIKit.framework */; };
@@ -40,6 +43,12 @@
 		1AAE96CE1967D617002B8163 /* PTDBean.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTDBean.h; sourceTree = "<group>"; };
 		1AAE96CF1967D617002B8163 /* PTDBeanManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTDBeanManager.h; sourceTree = "<group>"; };
 		1AAE96D01967D617002B8163 /* PTDBeanRadioConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTDBeanRadioConfig.h; sourceTree = "<group>"; };
+		1ADCA6481967ED560066DB7B /* TBWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBWelcomeViewController.h; sourceTree = "<group>"; };
+		1ADCA6491967ED560066DB7B /* TBWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBWelcomeViewController.m; sourceTree = "<group>"; };
+		1ADCA64B1967ED760066DB7B /* TBSelectBeanIntention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBSelectBeanIntention.h; sourceTree = "<group>"; };
+		1ADCA64C1967ED760066DB7B /* TBSelectBeanIntention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBSelectBeanIntention.m; sourceTree = "<group>"; };
+		1ADCA64F1967EE9B0066DB7B /* TBBeansBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBBeansBrowserViewController.h; sourceTree = "<group>"; };
+		1ADCA6501967EE9B0066DB7B /* TBBeansBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBBeansBrowserViewController.m; sourceTree = "<group>"; };
 		1ADE1C3A1967BAA800786DA1 /* teslaboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = teslaboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ADE1C3D1967BAA800786DA1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1ADE1C3F1967BAA800786DA1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -98,6 +107,15 @@
 			name = Header;
 			sourceTree = "<group>";
 		};
+		1ADCA64E1967ED780066DB7B /* Intention */ = {
+			isa = PBXGroup;
+			children = (
+				1ADCA64B1967ED760066DB7B /* TBSelectBeanIntention.h */,
+				1ADCA64C1967ED760066DB7B /* TBSelectBeanIntention.m */,
+			);
+			name = Intention;
+			sourceTree = "<group>";
+		};
 		1ADE1C311967BAA800786DA1 = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +155,7 @@
 				1ADE1C4C1967BAA800786DA1 /* TBAppDelegate.h */,
 				1ADE1C4D1967BAA800786DA1 /* TBAppDelegate.m */,
 				1ADE1C4F1967BAA800786DA1 /* Main.storyboard */,
+				1ADCA64E1967ED780066DB7B /* Intention */,
 				1ADE1C721967CF4000786DA1 /* ViewController */,
 				1ADE1C761967CF6900786DA1 /* Singleton */,
 				1AAE96D11967D636002B8163 /* Header */,
@@ -178,6 +197,10 @@
 		1ADE1C721967CF4000786DA1 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				1ADCA6481967ED560066DB7B /* TBWelcomeViewController.h */,
+				1ADCA6491967ED560066DB7B /* TBWelcomeViewController.m */,
+				1ADCA64F1967EE9B0066DB7B /* TBBeansBrowserViewController.h */,
+				1ADCA6501967EE9B0066DB7B /* TBBeansBrowserViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -323,6 +346,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1ADE1C4E1967BAA800786DA1 /* TBAppDelegate.m in Sources */,
+				1ADCA64A1967ED560066DB7B /* TBWelcomeViewController.m in Sources */,
+				1ADCA64D1967ED760066DB7B /* TBSelectBeanIntention.m in Sources */,
+				1ADCA6511967EE9B0066DB7B /* TBBeansBrowserViewController.m in Sources */,
 				1ADE1C4A1967BAA800786DA1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
