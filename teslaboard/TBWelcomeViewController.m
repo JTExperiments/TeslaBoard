@@ -50,14 +50,16 @@
 
     [bean sendSerialString:@"1"];
 
+    NSLog(@"sent 1");
 }
 
 - (IBAction)stopButtonDidPress:(id)sender {
     // set the scratch data
     PTDBean *bean = [TBBeansManager sharedInstance].bean;
 
-    [bean sendSerialString:@"1\n"];
+    [bean sendSerialString:@"0"];
 
+    NSLog(@"sent 0");
 }
 
 @end
