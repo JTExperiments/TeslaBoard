@@ -27,16 +27,34 @@
                                     <segue destination="QaZ-s2-4cd" kind="modal" id="9rw-Ol-bU2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptb-KO-iAp">
+                                <rect key="frame" x="20" y="140" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="setScratch1">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendButtonDidPress:" destination="k3o-q4-rQq" eventType="touchUpInside" id="wmR-qG-yEP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqE-cv-0R5">
+                                <rect key="frame" x="20" y="102" width="98" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Connect Bean">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="connectButtonDidPress:" destination="k3o-q4-rQq" eventType="touchUpInside" id="zgB-iT-77j"/>
+                                    <action selector="sendButtonDidPress:" destination="k3o-q4-rQq" eventType="touchUpInside" id="icO-n8-OnC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.87058823529411766" green="0.43529411764705883" blue="0.14509803921568629" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="3D0-HC-78e">
-                        <barButtonItem key="rightBarButtonItem" title="Connect" id="1KR-ck-1UW">
-                            <connections>
-                                <action selector="connectButtonDidPress:" destination="k3o-q4-rQq" id="4Xw-hq-qiQ"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="3D0-HC-78e"/>
                     <connections>
                         <outlet property="selectBeanIntention" destination="KuN-LH-b8t" id="xlZ-gz-EEf"/>
                     </connections>
