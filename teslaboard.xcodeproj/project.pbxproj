@@ -14,6 +14,7 @@
 		1A04854119681F2300BC7D29 /* TBVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A04854019681F2300BC7D29 /* TBVenue.m */; };
 		1A048544196822FA00BC7D29 /* TBGetVenuesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A048543196822FA00BC7D29 /* TBGetVenuesRequest.m */; };
 		1A0485471968234000BC7D29 /* TBAddVenueIntention.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0485461968234000BC7D29 /* TBAddVenueIntention.m */; };
+		1A6E4C3A19683BA20056B629 /* TBClub.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E4C3919683BA20056B629 /* TBClub.m */; };
 		1AAE96CC1967D5EC002B8163 /* libBean iOS Library.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAE96CB1967D5EC002B8163 /* libBean iOS Library.a */; };
 		1ADCA64A1967ED560066DB7B /* TBWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ADCA6491967ED560066DB7B /* TBWelcomeViewController.m */; };
 		1ADCA64D1967ED760066DB7B /* TBSelectBeanIntention.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ADCA64C1967ED760066DB7B /* TBSelectBeanIntention.m */; };
@@ -59,6 +60,8 @@
 		1A048543196822FA00BC7D29 /* TBGetVenuesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBGetVenuesRequest.m; sourceTree = "<group>"; };
 		1A0485451968234000BC7D29 /* TBAddVenueIntention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAddVenueIntention.h; sourceTree = "<group>"; };
 		1A0485461968234000BC7D29 /* TBAddVenueIntention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAddVenueIntention.m; sourceTree = "<group>"; };
+		1A6E4C3819683BA20056B629 /* TBClub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBClub.h; sourceTree = "<group>"; };
+		1A6E4C3919683BA20056B629 /* TBClub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBClub.m; sourceTree = "<group>"; };
 		1AAE96CB1967D5EC002B8163 /* libBean iOS Library.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libBean iOS Library.a"; sourceTree = "<group>"; };
 		1AAE96CD1967D617002B8163 /* BEAN_Globals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BEAN_Globals.h; sourceTree = "<group>"; };
 		1AAE96CE1967D617002B8163 /* PTDBean.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTDBean.h; sourceTree = "<group>"; };
@@ -153,6 +156,8 @@
 				1ADCA6561967F35C0066DB7B /* TBBeansManager.m */,
 				1A04853F19681F2300BC7D29 /* TBVenue.h */,
 				1A04854019681F2300BC7D29 /* TBVenue.m */,
+				1A6E4C3819683BA20056B629 /* TBClub.h */,
+				1A6E4C3919683BA20056B629 /* TBClub.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -201,7 +206,7 @@
 				1ADCA65819680BA70066DB7B /* Model */,
 				1ADCA64E1967ED780066DB7B /* Intention */,
 				1ADE1C721967CF4000786DA1 /* ViewController */,
-				1ADE1C761967CF6900786DA1 /* Singleton */,
+				1ADE1C761967CF6900786DA1 /* Request */,
 				1AAE96D11967D636002B8163 /* Header */,
 				1ADE1C551967BAA800786DA1 /* Images.xcassets */,
 				1ADE1C441967BAA800786DA1 /* Supporting Files */,
@@ -251,7 +256,7 @@
 			name = ViewController;
 			sourceTree = "<group>";
 		};
-		1ADE1C761967CF6900786DA1 /* Singleton */ = {
+		1ADE1C761967CF6900786DA1 /* Request */ = {
 			isa = PBXGroup;
 			children = (
 				1A04853C19681E0200BC7D29 /* TBAddVenueRequest.h */,
@@ -259,7 +264,7 @@
 				1A048542196822FA00BC7D29 /* TBGetVenuesRequest.h */,
 				1A048543196822FA00BC7D29 /* TBGetVenuesRequest.m */,
 			);
-			name = Singleton;
+			name = Request;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,6 +412,7 @@
 				1ADE1C4A1967BAA800786DA1 /* main.m in Sources */,
 				1A048544196822FA00BC7D29 /* TBGetVenuesRequest.m in Sources */,
 				1A0485471968234000BC7D29 /* TBAddVenueIntention.m in Sources */,
+				1A6E4C3A19683BA20056B629 /* TBClub.m in Sources */,
 				1A048538196814A800BC7D29 /* TBMapsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

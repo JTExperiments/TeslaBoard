@@ -8,13 +8,16 @@
 
 #import "TBVenue.h"
 #import <AVOSCloud/AVOSCloud.h>
+#import "TBClub.h"
 @import MapKit;
 
 @interface TBVenue ()
 
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 @property (copy, nonatomic) NSString *name;
+@property (copy, nonatomic) NSString *address;
 @property (strong, nonatomic) MKCircle *circle;
+@property (strong, nonatomic) TBClub *club;
 
 @end
 
@@ -23,7 +26,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@:%p> %@ {%f, %f}", self.class, self, self.name, self.coordinate.latitude, self.coordinate.longitude];
+    return [NSString stringWithFormat:@"<%@:%p> %@ {%f, %f} (club: %@)", self.class, self, self.name, self.coordinate.latitude, self.coordinate.longitude, self.club.name];
 }
 
 + (TBVenue *)venueWithAVObject:(AVObject *)object {
@@ -31,9 +34,10 @@
     AVGeoPoint *point = [object objectForKey:@"location"];
     venue.coordinate = CLLocationCoordinate2DMake(point.latitude, point.longitude);
     venue.name = [object objectForKey:@"name"];
-
+    venue.address = [object objectForKey:@"address"];
     venue.circle = [MKCircle circleWithCenterCoordinate:venue.coordinate
                                                  radius:1 * 1000];
+    venue.club = [TBClub clubWithAVObject:[object objectForKey:@"club"]];
 
     return venue;
 }
@@ -45,7 +49,7 @@
 }
 
 - (NSString *)subtitle {
-    return [NSString stringWithFormat:@"%f, %f", self.coordinate.latitude, self.coordinate.longitude];
+    return [NSString stringWithFormat:@"地址：%@", self.address];
 }
 
 #pragma mark MKOverlay

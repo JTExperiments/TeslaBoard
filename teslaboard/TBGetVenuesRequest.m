@@ -17,6 +17,7 @@
 
     AVQuery * query = [AVQuery queryWithClassName:@"Venue"];
     query.limit = 100;
+    [query includeKey:@"club"];
 
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
 

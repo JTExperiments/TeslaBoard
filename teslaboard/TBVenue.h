@@ -10,6 +10,7 @@
 
 @import MapKit;
 @class AVObject;
+@class TBClub;
 
 @import CoreLocation;
 
@@ -17,6 +18,8 @@
 
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 @property (copy, nonatomic, readonly) NSString *name;
+@property (copy, nonatomic, readonly) NSString *address;
+@property (strong, nonatomic, readonly) TBClub *club;
 
 + (TBVenue *)venueWithAVObject:(AVObject *)object;
 

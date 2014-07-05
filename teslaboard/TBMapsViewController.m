@@ -10,6 +10,7 @@
 #import "TBAddVenueIntention.h"
 #import "TBGetVenuesRequest.h"
 #import "TBVenue.h"
+#import "TBClub.h"
 
 @import MapKit;
 
@@ -80,11 +81,10 @@
 
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {
 
+    TBVenue *venue = overlay;
+    TBClub *club = venue.club;
     MKCircleRenderer *renderrer = [[MKCircleRenderer alloc] initWithCircle:overlay];
-    renderrer.fillColor = [UIColor colorWithRed:(CGFloat)0x34/0xff
-                                          green:(CGFloat)0xa3/0xff
-                                           blue:(CGFloat)0xdb/0xff
-                                          alpha:0.2];
+    renderrer.fillColor = [club.color colorWithAlphaComponent:0.2];
 
     return renderrer;
 }
