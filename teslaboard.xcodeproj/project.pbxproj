@@ -122,6 +122,17 @@
 			name = Intention;
 			sourceTree = "<group>";
 		};
+		1ADCA65819680BA70066DB7B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1ADCA6521967EEC00066DB7B /* TBBeansDataSource.h */,
+				1ADCA6531967EEC00066DB7B /* TBBeansDataSource.m */,
+				1ADCA6551967F35C0066DB7B /* TBBeansManager.h */,
+				1ADCA6561967F35C0066DB7B /* TBBeansManager.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		1ADE1C311967BAA800786DA1 = {
 			isa = PBXGroup;
 			children = (
@@ -161,10 +172,7 @@
 				1ADE1C4C1967BAA800786DA1 /* TBAppDelegate.h */,
 				1ADE1C4D1967BAA800786DA1 /* TBAppDelegate.m */,
 				1ADE1C4F1967BAA800786DA1 /* Main.storyboard */,
-				1ADCA6521967EEC00066DB7B /* TBBeansDataSource.h */,
-				1ADCA6531967EEC00066DB7B /* TBBeansDataSource.m */,
-				1ADCA6551967F35C0066DB7B /* TBBeansManager.h */,
-				1ADCA6561967F35C0066DB7B /* TBBeansManager.m */,
+				1ADCA65819680BA70066DB7B /* Model */,
 				1ADCA64E1967ED780066DB7B /* Intention */,
 				1ADE1C721967CF4000786DA1 /* ViewController */,
 				1ADE1C761967CF6900786DA1 /* Singleton */,

@@ -40,7 +40,9 @@ NSString *const TBBeansManagerBeanDidConnectNotification = @"TBBeansManagerBeanD
 
 - (void)commonInit {
     self.shouldStartScan = YES;
+#if ! TARGET_IPHONE_SIMULATOR
     self.beansManager = [[PTDBeanManager alloc] initWithDelegate:self];
+#endif
 }
 
 - (void)startScanning {
