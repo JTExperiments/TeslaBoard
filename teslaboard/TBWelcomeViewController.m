@@ -58,12 +58,15 @@
 
 - (IBAction)startButtonDidPress:(id)sender {
 
+    NSInteger tag = [sender tag];
+
     // set the scratch data
     PTDBean *bean = [TBBeansManager sharedInstance].bean;
 
-    [bean sendSerialString:@"1"];
+    NSString *string = [NSString stringWithFormat:@"%d", tag];
+    [bean sendSerialString:string];
 
-    NSLog(@"sent 1");
+    NSLog(@"sent %@", string);
 }
 
 - (IBAction)stopButtonDidPress:(id)sender {
