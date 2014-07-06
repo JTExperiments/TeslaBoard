@@ -10,8 +10,10 @@
 #import "TBAddVenueIntention.h"
 #import "TBGetVenuesRequest.h"
 #import "TBVenue.h"
+#import "UIButton+WebCache.h"
 #import "TBClub.h"
 #import "UIImageView+WebCache.h"
+#import "TBSelectVenueIntention.h"
 
 @import MapKit;
 
@@ -20,6 +22,7 @@
 @property (strong, nonatomic) MKUserLocation *userLocation;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) TBAddVenueIntention *addVenueIntention;
+@property (strong, nonatomic) TBSelectVenueIntention *selectVenueIntention;
 @property (strong, nonatomic) TBGetVenuesRequest *getVenuesRequet;
 @property (copy, nonatomic) NSArray *venues;  // TBVenue
 
@@ -93,21 +96,30 @@
 
     MKAnnotationView *view = [mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
 
-    UIImageView *calloutImageView = (id)[view viewWithTag:1];
+    UIButton *calloutLogo = (id)[view viewWithTag:1];
     if ( ! view) {
         view = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
-        calloutImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 38, 38)];
-        calloutImageView.image = [UIImage imageNamed:@"club-placeholder"];
-        calloutImageView.tag = 1;
-        view.leftCalloutAccessoryView = calloutImageView;
+        calloutLogo = [UIButton buttonWithType:UIButtonTypeCustom];
+        calloutLogo.frame = CGRectMake(0, 0, 38, 38);
+        [calloutLogo setImage:[UIImage imageNamed:@"club-placeholder"] forState:UIControlStateNormal];
+        calloutLogo.tag = 1;
+        view.leftCalloutAccessoryView = calloutLogo;
         view.canShowCallout = YES;
     }
 
     view.annotation = annotation;
     view.image = club.logo;
-    [calloutImageView setImageWithURL:club.logoURL];
+    [calloutLogo setImage:club.logo forState:UIControlStateNormal];
 
     return view;
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+    TBVenue *venue = (TBVenue *)view.annotation;
+    self.selectVenueIntention = [[TBSelectVenueIntention alloc] init];
+    self.selectVenueIntention.viewController = self;
+    self.selectVenueIntention.venue = venue;
+    [self.selectVenueIntention perform];
 }
 
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {

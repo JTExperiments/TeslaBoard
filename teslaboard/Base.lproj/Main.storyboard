@@ -185,6 +185,24 @@
             </objects>
             <point key="canvasLocation" x="1638" y="714"/>
         </scene>
+        <!--Venue View Controller-->
+        <scene sceneID="62j-hw-sCN">
+            <objects>
+                <viewController storyboardIdentifier="venueViewController" id="Xcl-et-1SR" customClass="TBVenueViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bgk-xH-aMd"/>
+                        <viewControllerLayoutGuide type="bottom" id="ln5-Bv-ZJx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iN7-zX-B5M">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JZO-dT-hZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2463" y="1030"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="7FS-Ee-w3g">
             <objects>
