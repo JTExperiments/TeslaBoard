@@ -20,6 +20,18 @@
 
 @implementation TBWelcomeViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+
+    UIViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"loginViewController"];
+
+    [self presentViewController:controller
+                       animated:YES
+                     completion:NULL];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];

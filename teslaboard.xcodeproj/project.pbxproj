@@ -16,6 +16,8 @@
 		1A0485471968234000BC7D29 /* TBAddVenueIntention.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0485461968234000BC7D29 /* TBAddVenueIntention.m */; };
 		1A12343D1968FACC00BC3BB6 /* TBSelectVenueIntention.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A12343C1968FACC00BC3BB6 /* TBSelectVenueIntention.m */; };
 		1A1234401968FB3300BC3BB6 /* TBVenueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A12343F1968FB3300BC3BB6 /* TBVenueViewController.m */; };
+		1A1ABBE319691EB40009E93B /* TBGenericViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1ABBE219691EB40009E93B /* TBGenericViewController.m */; };
+		1A1ABBE619691F310009E93B /* TBScreenFlowIntention.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1ABBE519691F310009E93B /* TBScreenFlowIntention.m */; };
 		1A6E4C3A19683BA20056B629 /* TBClub.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E4C3919683BA20056B629 /* TBClub.m */; };
 		1AAE96CC1967D5EC002B8163 /* libBean iOS Library.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAE96CB1967D5EC002B8163 /* libBean iOS Library.a */; };
 		1ADCA64A1967ED560066DB7B /* TBWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ADCA6491967ED560066DB7B /* TBWelcomeViewController.m */; };
@@ -66,6 +68,10 @@
 		1A12343C1968FACC00BC3BB6 /* TBSelectVenueIntention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBSelectVenueIntention.m; sourceTree = "<group>"; };
 		1A12343E1968FB3300BC3BB6 /* TBVenueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBVenueViewController.h; sourceTree = "<group>"; };
 		1A12343F1968FB3300BC3BB6 /* TBVenueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBVenueViewController.m; sourceTree = "<group>"; };
+		1A1ABBE119691EB40009E93B /* TBGenericViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBGenericViewController.h; sourceTree = "<group>"; };
+		1A1ABBE219691EB40009E93B /* TBGenericViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBGenericViewController.m; sourceTree = "<group>"; };
+		1A1ABBE419691F310009E93B /* TBScreenFlowIntention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBScreenFlowIntention.h; sourceTree = "<group>"; };
+		1A1ABBE519691F310009E93B /* TBScreenFlowIntention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBScreenFlowIntention.m; sourceTree = "<group>"; };
 		1A6E4C3819683BA20056B629 /* TBClub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBClub.h; sourceTree = "<group>"; };
 		1A6E4C3919683BA20056B629 /* TBClub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBClub.m; sourceTree = "<group>"; };
 		1AAE96CB1967D5EC002B8163 /* libBean iOS Library.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libBean iOS Library.a"; sourceTree = "<group>"; };
@@ -151,6 +157,8 @@
 				1A0485461968234000BC7D29 /* TBAddVenueIntention.m */,
 				1A12343B1968FACC00BC3BB6 /* TBSelectVenueIntention.h */,
 				1A12343C1968FACC00BC3BB6 /* TBSelectVenueIntention.m */,
+				1A1ABBE419691F310009E93B /* TBScreenFlowIntention.h */,
+				1A1ABBE519691F310009E93B /* TBScreenFlowIntention.m */,
 			);
 			name = Intention;
 			sourceTree = "<group>";
@@ -262,6 +270,8 @@
 				1A048537196814A800BC7D29 /* TBMapsViewController.m */,
 				1A12343E1968FB3300BC3BB6 /* TBVenueViewController.h */,
 				1A12343F1968FB3300BC3BB6 /* TBVenueViewController.m */,
+				1A1ABBE119691EB40009E93B /* TBGenericViewController.h */,
+				1A1ABBE219691EB40009E93B /* TBGenericViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -413,10 +423,12 @@
 			files = (
 				1ADCA6541967EEC00066DB7B /* TBBeansDataSource.m in Sources */,
 				1A04853E19681E0200BC7D29 /* TBAddVenueRequest.m in Sources */,
+				1A1ABBE619691F310009E93B /* TBScreenFlowIntention.m in Sources */,
 				1ADE1C4E1967BAA800786DA1 /* TBAppDelegate.m in Sources */,
 				1ADCA64A1967ED560066DB7B /* TBWelcomeViewController.m in Sources */,
 				1ADCA64D1967ED760066DB7B /* TBSelectBeanIntention.m in Sources */,
 				1A04854119681F2300BC7D29 /* TBVenue.m in Sources */,
+				1A1ABBE319691EB40009E93B /* TBGenericViewController.m in Sources */,
 				1A12343D1968FACC00BC3BB6 /* TBSelectVenueIntention.m in Sources */,
 				1ADCA6511967EE9B0066DB7B /* TBBeansBrowserViewController.m in Sources */,
 				1A1234401968FB3300BC3BB6 /* TBVenueViewController.m in Sources */,

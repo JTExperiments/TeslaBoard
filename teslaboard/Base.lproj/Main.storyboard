@@ -328,6 +328,40 @@
             </objects>
             <point key="canvasLocation" x="2030" y="1406"/>
         </scene>
+        <!--Generic View Controller-->
+        <scene sceneID="567-TA-2HM">
+            <objects>
+                <viewController storyboardIdentifier="loginViewController" id="OL1-lv-UqN" customClass="TBGenericViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6sa-YK-6FN"/>
+                        <viewControllerLayoutGuide type="bottom" id="5nk-PF-WQX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AbY-Uk-oHv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="login" translatesAutoresizingMaskIntoConstraints="NO" id="Z96-BU-Mam">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VdF-zZ-ePe">
+                                <rect key="frame" x="31" y="316" width="255" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissButtonDidPress:" destination="OL1-lv-UqN" eventType="touchUpInside" id="z9q-2D-Q9w"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9fX-v8-ZeX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="656" y="294"/>
+        </scene>
         <!--Beans Browser View Controller - Beans-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -455,10 +489,11 @@
         <image name="item-experience" width="244" height="243"/>
         <image name="item-friends" width="244" height="243"/>
         <image name="item-time" width="244" height="243"/>
+        <image name="login" width="320" height="568"/>
         <image name="logo" width="154" height="64"/>
         <image name="map" width="23" height="24"/>
-        <image name="profile" width="640" height="1006"/>
-        <image name="venue" width="640" height="1006"/>
+        <image name="profile" width="320" height="503"/>
+        <image name="venue" width="320" height="503"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
