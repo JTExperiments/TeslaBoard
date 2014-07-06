@@ -20,6 +20,19 @@
 
 @implementation TBWelcomeViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
+}
+
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+
+    NSLog(@"self.navigationController.navigationBar %@", self.navigationController.navigationBar);
+    [self.navigationController setNavigationBarHidden:NO];
+}
+
 - (IBAction)connectButtonDidPress:(id)sender {
     [self.selectBeanIntention perform];
 }

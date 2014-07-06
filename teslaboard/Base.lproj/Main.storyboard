@@ -78,6 +78,16 @@
                                     <action selector="stopButtonDidPress:" destination="k3o-q4-rQq" eventType="touchUpInside" id="tVT-YW-q7f"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZ1-BU-MNh">
+                                <rect key="frame" x="20" y="326" width="138" height="133"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Profile">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="8eN-cy-Rpx" kind="push" id="EU7-Xa-ngP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.87058823529411766" green="0.43529411764705883" blue="0.14509803921568629" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -97,7 +107,33 @@
             </objects>
             <point key="canvasLocation" x="1041" y="987"/>
         </scene>
-        <!--Maps View Controller - 地圖-->
+        <!--View Controller - 個人資料-->
+        <scene sceneID="Ufo-sC-j4G">
+            <objects>
+                <viewController title="個人資料" id="8eN-cy-Rpx" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="sMu-RL-0rM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="pfM-pw-eOu">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="503"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="Tr3-QN-UDu">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="503"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="个人资料" id="Lzy-9y-NJw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QDs-Ty-Kx0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1631" y="16"/>
+        </scene>
+        <!--Maps View Controller-->
         <scene sceneID="cCi-8s-sA7">
             <objects>
                 <viewController id="PDG-dU-csH" customClass="TBMapsViewController" sceneMemberID="viewController">
@@ -119,12 +155,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="地圖" id="7eb-ch-QvQ">
+                    <navigationItem key="navigationItem" id="7eb-ch-QvQ">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="add" id="K1R-LE-kkJ">
                             <connections>
                                 <action selector="addButtonDidPress:" destination="PDG-dU-csH" id="bds-mL-BBj"/>
                             </connections>
                         </barButtonItem>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="l8U-uC-1VM">
+                            <rect key="frame" x="96" y="6" width="128" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <state key="normal" title="地圖">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
                         <barButtonItem key="rightBarButtonItem" image="map" id="Boc-55-FDr">
                             <connections>
                                 <action selector="listButtonDidPress:" destination="PDG-dU-csH" id="add-Fh-Acx"/>
@@ -185,10 +231,10 @@
             </objects>
             <point key="canvasLocation" x="1638" y="714"/>
         </scene>
-        <!--Venue View Controller-->
+        <!--Venue View Controller - 普陀滑板場-->
         <scene sceneID="62j-hw-sCN">
             <objects>
-                <viewController storyboardIdentifier="venueViewController" id="Xcl-et-1SR" customClass="TBVenueViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="venueViewController" title="普陀滑板場" id="Xcl-et-1SR" customClass="TBVenueViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bgk-xH-aMd"/>
                         <viewControllerLayoutGuide type="bottom" id="ln5-Bv-ZJx"/>
@@ -196,6 +242,12 @@
                     <view key="view" contentMode="scaleToFill" id="iN7-zX-B5M">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" image="venue" translatesAutoresizingMaskIntoConstraints="NO" id="61E-FG-5Qo">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="503"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
@@ -208,9 +260,14 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="nF0-QL-GTb" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bx5-cC-Ksg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Bx5-cC-Ksg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.94983106851577759" green="0.28467085957527161" blue="0.2397511899471283" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -247,6 +304,8 @@
     </scenes>
     <resources>
         <image name="map" width="23" height="24"/>
+        <image name="profile" width="640" height="1006"/>
+        <image name="venue" width="640" height="1006"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
