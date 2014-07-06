@@ -112,6 +112,14 @@ NSString *const TBBeansManagerBeanDidConnectNotification = @"TBBeansManagerBeanD
 // bean connected
 - (void)BeanManager:(PTDBeanManager*)beanManager didConnectToBean:(PTDBean*)bean error:(NSError*)error{
     if (error) {
+
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"连接失败"
+                                                        message:@""
+                                                       delegate:nil
+                                              cancelButtonTitle:@"好" otherButtonTitles:nil];
+
+        [alert show];
+
         PTDLog(@"%@", [error localizedDescription]);
         return;
     }
@@ -119,6 +127,13 @@ NSString *const TBBeansManagerBeanDidConnectNotification = @"TBBeansManagerBeanD
     NSLog(@"Bean connected!");
 
     [[NSNotificationCenter defaultCenter] postNotificationName:TBBeansManagerBeanDidConnectNotification object:bean];
+
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"巳连接"
+                                                    message:@""
+                                                   delegate:nil
+                                          cancelButtonTitle:@"好" otherButtonTitles:nil];
+
+    [alert show];
 
 //    [self.delegate beansDataSource:self
 //                     didSelectBean:bean];
