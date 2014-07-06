@@ -116,6 +116,9 @@
                                 <state key="normal" backgroundImage="item-experience">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Lgb-BT-qfN" kind="modal" id="RKP-T1-dvf"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EVF-qN-BSO">
                                 <rect key="frame" x="122" y="141" width="122" height="122"/>
@@ -248,7 +251,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ail-HB-DwD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1631" y="721"/>
+            <point key="canvasLocation" x="1175" y="-161"/>
         </scene>
         <!--View Controller - 個人資料-->
         <scene sceneID="Ufo-sC-j4G">
@@ -284,7 +287,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QDs-Ty-Kx0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1694" y="4"/>
+            <point key="canvasLocation" x="1631" y="2"/>
         </scene>
         <!--Maps View Controller-->
         <scene sceneID="cCi-8s-sA7">
@@ -310,9 +313,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="7eb-ch-QvQ">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="K1R-LE-kkJ">
+                        <barButtonItem key="leftBarButtonItem" title="返回" id="ZwZ-u3-TZu">
                             <connections>
-                                <action selector="addButtonDidPress:" destination="PDG-dU-csH" id="bds-mL-BBj"/>
+                                <action selector="listButtonDidPress:" destination="PDG-dU-csH" id="Nhd-yn-dYr"/>
                             </connections>
                         </barButtonItem>
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="l8U-uC-1VM">
@@ -324,11 +327,6 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
-                        <barButtonItem key="rightBarButtonItem" image="map" id="Boc-55-FDr">
-                            <connections>
-                                <action selector="listButtonDidPress:" destination="PDG-dU-csH" id="add-Fh-Acx"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="Tfp-mc-XzJ" id="s3I-tP-MEX"/>
@@ -336,7 +334,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yJV-0U-je6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2030" y="1406"/>
+            <point key="canvasLocation" x="2036" y="2110"/>
         </scene>
         <!--Generic View Controller-->
         <scene sceneID="567-TA-2HM">
@@ -440,7 +438,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JZO-dT-hZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2463" y="1030"/>
+            <point key="canvasLocation" x="3019" y="1224"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7FS-Ee-w3g">
@@ -487,7 +485,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xjk-ai-M4P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1631" y="1406"/>
+            <point key="canvasLocation" x="1637" y="2110"/>
         </scene>
         <!--View Controller - 個人資料-->
         <scene sceneID="y42-vV-RaJ">
@@ -513,7 +511,119 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tea-Ln-G67" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2077" y="-3"/>
+            <point key="canvasLocation" x="2036" y="2"/>
+        </scene>
+        <!--Maps View Controller-->
+        <scene sceneID="M3g-FY-PlR">
+            <objects>
+                <viewController id="zgS-ul-UW4" customClass="TBMapsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WUZ-nK-kC0"/>
+                        <viewControllerLayoutGuide type="bottom" id="3zH-JC-3vy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RlS-Ku-i0B">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mission-map" translatesAutoresizingMaskIntoConstraints="NO" id="9yf-yJ-SL0">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahl-zl-tnr">
+                                <rect key="frame" x="88" y="299" width="201" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="py3-qc-vsB" kind="push" id="Eo6-jZ-tQB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="geQ-jX-f7I">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title="返回" id="vo0-jl-C0R">
+                            <connections>
+                                <action selector="listButtonDidPress:" destination="zgS-ul-UW4" id="462-tr-XZI"/>
+                            </connections>
+                        </barButtonItem>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wWp-A0-50f">
+                            <rect key="frame" x="96" y="5" width="128" height="34"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <state key="normal" title="任务">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hha-5h-mDb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2194" y="718"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="z3E-oN-g9o">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lgb-BT-qfN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="iYn-Bq-xjr"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="bsg-te-LF3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.94983106849999999" green="0.28467085959999999" blue="0.23975118989999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zgS-ul-UW4" kind="relationship" relationship="rootViewController" id="gUW-pI-jIY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bhx-f7-ag7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1631" y="718"/>
+        </scene>
+        <!--Maps View Controller-->
+        <scene sceneID="WdU-yZ-OEH">
+            <objects>
+                <viewController id="py3-qc-vsB" customClass="TBMapsViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="23p-bE-zh3">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Z7y-wV-FAx">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="620"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="mission-detail" translatesAutoresizingMaskIntoConstraints="NO" id="7Rc-tY-ybQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="620"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="ZyK-HD-HBI">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cyG-RT-4GV">
+                            <rect key="frame" x="96" y="5" width="128" height="34"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <state key="normal" title="任务明细">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3z8-Lw-D1R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2592" y="718"/>
         </scene>
     </scenes>
     <resources>
@@ -527,9 +637,10 @@
         <image name="item-time" width="244" height="243"/>
         <image name="login" width="320" height="568"/>
         <image name="logo" width="154" height="64"/>
-        <image name="map" width="23" height="24"/>
-        <image name="user-feed" width="640" height="1407"/>
-        <image name="user-profile" width="640" height="1136"/>
+        <image name="mission-detail" width="320" height="620"/>
+        <image name="mission-map" width="320" height="504"/>
+        <image name="user-feed" width="320" height="703"/>
+        <image name="user-profile" width="320" height="568"/>
         <image name="venue" width="320" height="503"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
