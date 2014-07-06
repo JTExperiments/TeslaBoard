@@ -75,6 +75,8 @@
         MKCoordinateRegion region = {[self userLocation].location.coordinate, span};
 
         [self.mapView setRegion:region animated:YES];
+
+        self.mapView.userTrackingMode = MKUserTrackingModeNone;
     }
 }
 
